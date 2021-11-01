@@ -1,5 +1,4 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import products from "../../ProductsList";
 
 interface Product {
   id: number;
@@ -30,7 +29,7 @@ export const CartProvider = ({ children }: CartProps) => {
 
   const deleteProduct = (productToBeDeleted: Product) => {
     const newCart = cart.filter(
-      (product) => product.title !== productToBeDeleted.title
+      (product) => product.id !== productToBeDeleted.id
     );
     setCart(newCart);
   };
